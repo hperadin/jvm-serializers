@@ -3,26 +3,23 @@ package serializers.dslplatform.media;
 
 
 public final class MediaContent   implements java.io.Serializable, com.dslplatform.client.json.JsonObject {
-	
-	
-	
+
 	public MediaContent(
 			final serializers.dslplatform.media.Media media,
 			final java.util.List<serializers.dslplatform.media.Image> images) {
-			
+
 		setMedia(media);
 		setImages(images);
 	}
 
-	
-	
+
 	public MediaContent() {
-			
+
 		this.media = new serializers.dslplatform.media.Media();
-		this.images = new java.util.ArrayList<serializers.dslplatform.media.Image>();
+        this.images = new java.util.ArrayList<serializers.dslplatform.media.Image>(4);
 	}
 
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -42,7 +39,7 @@ public final class MediaContent   implements java.io.Serializable, com.dslplatfo
 		if (!(obj instanceof MediaContent))
 			return false;
 		final MediaContent other = (MediaContent) obj;
-		
+
 		if(!(this.media.equals(other.media)))
 			return false;
 		if(!((this.images == other.images || this.images != null && this.images.equals(other.images))))
@@ -55,67 +52,67 @@ public final class MediaContent   implements java.io.Serializable, com.dslplatfo
 	public String toString() {
 		return "MediaContent(" + media + ',' + images + ')';
 	}
-	
+
 	private static final long serialVersionUID = 0x0097000a;
-	
+
 	private serializers.dslplatform.media.Media media;
 
-	
+
 	public serializers.dslplatform.media.Media getMedia()  {
-		
+
 		return media;
 	}
 
-	
+
 	public MediaContent setMedia(final serializers.dslplatform.media.Media value) {
-		
+
 		if(value == null) throw new IllegalArgumentException("Property \"media\" cannot be null!");
 		this.media = value;
-		
+
 		return this;
 	}
 
-	
+
 	private java.util.List<serializers.dslplatform.media.Image> images;
 
-	
+
 	public java.util.List<serializers.dslplatform.media.Image> getImages()  {
-		
+
 		return images;
 	}
 
-	
+
 	public MediaContent setImages(final java.util.List<serializers.dslplatform.media.Image> value) {
-		
+
 		if(value == null) throw new IllegalArgumentException("Property \"images\" cannot be null!");
 		serializers.dslplatform.Guards.checkNulls(value);
 		this.images = value;
-		
+
 		return this;
 	}
 
-	
-	public void serialize(final com.dslplatform.client.json.JsonWriter sw, final boolean minimal) {
+
+	@Override
+    public void serialize(final com.dslplatform.client.json.JsonWriter sw, final boolean minimal) {
 		sw.writeByte(com.dslplatform.client.json.JsonWriter.OBJECT_START);
 		__serializeJsonObject(sw, minimal, false);
 		sw.writeByte(com.dslplatform.client.json.JsonWriter.OBJECT_END);
 	}
 
-	void __serializeJsonObject(com.dslplatform.client.json.JsonWriter sw, boolean minimal, boolean hasWrittenProperty) {
-		
-		
+	void __serializeJsonObject(final com.dslplatform.client.json.JsonWriter sw, final boolean minimal, boolean hasWrittenProperty) {
+
 		if(this.media != null) {
 			if(hasWrittenProperty) sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
 			hasWrittenProperty = true;
 			sw.writeAscii("\"media\":");
 			this.media.serialize(sw, minimal);
-		} 
+        }
 		else if (!minimal) {
 			if(hasWrittenProperty) sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
 			hasWrittenProperty = true;
 			sw.writeAscii("\"media\":null");
 		}
-		
+
 		if(this.images.size() != 0) {
 			if(hasWrittenProperty) sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
 			hasWrittenProperty = true;
@@ -123,13 +120,13 @@ public final class MediaContent   implements java.io.Serializable, com.dslplatfo
 			serializers.dslplatform.media.Image item = this.images.get(0);
 				item.serialize(sw, minimal);
 			for(int i = 1; i < this.images.size(); i++) {
-				sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);	
+                sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
 				item = this.images.get(i);
 				item.serialize(sw, minimal);
 			}
 			sw.writeByte(com.dslplatform.client.json.JsonWriter.ARRAY_END);
 		}
-		else if (!minimal) 
+ else if (!minimal)
 		{
 			if(hasWrittenProperty) sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
 			hasWrittenProperty = true;
@@ -145,9 +142,10 @@ public final class MediaContent   implements java.io.Serializable, com.dslplatfo
 	};
 
 	private MediaContent(final com.dslplatform.client.json.JsonReader reader, final com.dslplatform.patterns.ServiceLocator _serviceLocator) throws java.io.IOException {
-		
+
 		serializers.dslplatform.media.Media _media_ = null;
-		java.util.List<serializers.dslplatform.media.Image> _images_ = new java.util.ArrayList<serializers.dslplatform.media.Image>();
+        final java.util.List<serializers.dslplatform.media.Image> _images_ =
+                new java.util.ArrayList<serializers.dslplatform.media.Image>(4);
 		byte nextToken = reader.last();
 		if(nextToken != '}') {
 			int nameHash = reader.fillName();
@@ -160,9 +158,9 @@ public final class MediaContent   implements java.io.Serializable, com.dslplatfo
 				}
 			} else {
 				switch(nameHash) {
-					
+
 					case -56959229:
-						
+
 					if (nextToken == '{') {
 						reader.getNextToken();
 						_media_ = serializers.dslplatform.media.Media.JSON_READER.deserialize(reader, _serviceLocator);
@@ -170,7 +168,7 @@ public final class MediaContent   implements java.io.Serializable, com.dslplatfo
 					} else throw new java.io.IOException("Expecting '{' at position " + reader.positionInStream() + ". Found " + (char)nextToken);
 						break;
 					case -774420821:
-						
+
 					if (nextToken == '[') {
 						nextToken = reader.getNextToken();
 						if (nextToken != ']') {
@@ -197,9 +195,9 @@ public final class MediaContent   implements java.io.Serializable, com.dslplatfo
 					}
 				}
 				switch(nameHash) {
-					
+
 					case -56959229:
-						
+
 					if (nextToken == '{') {
 						reader.getNextToken();
 						_media_ = serializers.dslplatform.media.Media.JSON_READER.deserialize(reader, _serviceLocator);
@@ -207,7 +205,7 @@ public final class MediaContent   implements java.io.Serializable, com.dslplatfo
 					} else throw new java.io.IOException("Expecting '{' at position " + reader.positionInStream() + ". Found " + (char)nextToken);
 						break;
 					case -774420821:
-						
+
 					if (nextToken == '[') {
 						nextToken = reader.getNextToken();
 						if (nextToken != ']') {
@@ -225,7 +223,7 @@ public final class MediaContent   implements java.io.Serializable, com.dslplatfo
 				throw new java.io.IOException("Expecting '}' at position " + reader.positionInStream() + ". Found " + (char)nextToken);
 			}
 		}
-		
+
 		this.media = _media_;
 		this.images = _images_;
 	}

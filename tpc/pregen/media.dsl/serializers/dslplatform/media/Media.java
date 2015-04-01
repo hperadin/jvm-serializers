@@ -43,7 +43,7 @@ public final class Media   implements java.io.Serializable, com.dslplatform.clie
 		this.duration = 0L;
 		this.size = 0L;
 		this.bitrate = 0;
-		this.persons = new java.util.ArrayList<String>();
+        this.persons = new java.util.ArrayList<String>(4);
 		this.player = serializers.dslplatform.media.Player.JAVA;
 	}
 
@@ -302,13 +302,14 @@ public final class Media   implements java.io.Serializable, com.dslplatform.clie
 	}
 
 	
-	public void serialize(final com.dslplatform.client.json.JsonWriter sw, final boolean minimal) {
+	@Override
+    public void serialize(final com.dslplatform.client.json.JsonWriter sw, final boolean minimal) {
 		sw.writeByte(com.dslplatform.client.json.JsonWriter.OBJECT_START);
 		__serializeJsonObject(sw, minimal, false);
 		sw.writeByte(com.dslplatform.client.json.JsonWriter.OBJECT_END);
 	}
 
-	void __serializeJsonObject(com.dslplatform.client.json.JsonWriter sw, boolean minimal, boolean hasWrittenProperty) {
+	void __serializeJsonObject(final com.dslplatform.client.json.JsonWriter sw, final boolean minimal, boolean hasWrittenProperty) {
 		
 		
 			if (this.uri != null && !(this.uri.length() == 0)) {
@@ -466,7 +467,7 @@ public final class Media   implements java.io.Serializable, com.dslplatform.clie
 		long _duration_ = 0L;
 		long _size_ = 0L;
 		int _bitrate_ = 0;
-		java.util.List<String> _persons_ = new java.util.ArrayList<String>();
+        final java.util.List<String> _persons_ = new java.util.ArrayList<String>(4);
 		serializers.dslplatform.media.Player _player_ = serializers.dslplatform.media.Player.JAVA;
 		String _copyright_ = null;
 		byte nextToken = reader.last();
