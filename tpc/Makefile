@@ -136,10 +136,10 @@ else ifneq ($(findstring .dsl,$(2)),)
 		-namespace=serializers.dslplatform \
 		-target=java_client \
 		-no-prompt \
-		-compiler \
-		-dependencies:java_client=$(dslplatform_dir)/dependencies \
+		-compiler=./dsl-compiler.exe \
+		-dependencies:java_client=dependencies \
 		-java_client=$(dslplatform_dir)/model.jar \
-		-download
+		-download -log
 	$(p1)cp -r $(dslplatform_dir)/tmp/java_client/serializers build/gen/$(2)
 else
 endif
