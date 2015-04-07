@@ -98,6 +98,6 @@
 	<classpathentry kind="lib" path="lib/kryo-2.23.0.jar"/>
 	<classpathentry kind="lib" path="lib/msgpack-0.6.9.jar"/>
 	<classpathentry kind="lib" path="lib/stephenerialization-3.0.0.jar"/>
-	<classpathentry kind="lib" path="/home/hperadin/code/serialization/jvm-serializers/tpc/lib/dsl-client-java-1.2.1.jar"/>
+	<classpathentry kind="lib" path="lib/dsl-client-java-1.2.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

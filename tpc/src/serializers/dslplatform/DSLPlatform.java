@@ -43,8 +43,7 @@ public class DSLPlatform {
         @Override
         public String getName() {
             return "json/dsl-platform" + (this.minimal
-                    ? "/omit-defaults"
-                    : "");
+                    ? "/omit-defaults" : "");
         }
 
         public DSLPlatformSerializer() {
@@ -80,8 +79,17 @@ public class DSLPlatform {
         }
 
         private static Media forward(final data.media.Media media) {
-            return new Media(media.uri, media.title, media.width, media.height, media.format, media.duration,
-                    media.size, media.bitrate, media.persons, forward(media.player), media.copyright);
+            return new Media(media.uri,
+                    media.title,
+                    media.width,
+                    media.height,
+                    media.format,
+                    media.duration,
+                    media.size,
+                    media.bitrate,
+                    media.persons,
+                    forward(media.player),
+                    media.copyright);
         }
 
         private static Player forward(final data.media.Media.Player player) {
@@ -99,7 +107,11 @@ public class DSLPlatform {
         }
 
         private static Image forward(final data.media.Image image) {
-            return new Image(image.uri, image.title, image.width, image.height, forward(image.size));
+            return new Image(image.uri,
+                    image.title,
+                    image.width,
+                    image.height,
+                    forward(image.size));
         }
 
         private static Size forward(final data.media.Image.Size size) {
@@ -118,9 +130,18 @@ public class DSLPlatform {
 
         private static data.media.Media reverse(final Media media) {
             // Media
-            return new data.media.Media(media.getUri(), media.getTitle(), media.getWidth(), media.getHeight(),
-                    media.getFormat(), media.getDuration(), media.getSize(), media.getBitrate(),
-                    media.getBitrate() != 0, media.getPersons(), reverse(media.getPlayer()), media.getCopyright());
+            return new data.media.Media(media.getUri(),
+                    media.getTitle(),
+                    media.getWidth(),
+                    media.getHeight(),
+                    media.getFormat(),
+                    media.getDuration(),
+                    media.getSize(),
+                    media.getBitrate(),
+                    media.getBitrate() != 0,
+                    media.getPersons(),
+                    reverse(media.getPlayer()),
+                    media.getCopyright());
         }
 
         private static data.media.Media.Player reverse(final Player player) {
@@ -138,7 +159,10 @@ public class DSLPlatform {
         }
 
         private static data.media.Image reverse(final Image image) {
-            return new data.media.Image(image.getUri(), image.getTitle(), image.getWidth(), image.getHeight(),
+            return new data.media.Image(image.getUri(),
+                    image.getTitle(),
+                    image.getWidth(),
+                    image.getHeight(),
                     reverse(image.getSize()));
         }
 
