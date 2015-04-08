@@ -1,1 +1,1 @@
-Generate_dslplatform = y
+Generate_dslplatform = n
