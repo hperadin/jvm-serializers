@@ -136,8 +136,7 @@ else ifneq ($(findstring .dsl,$(2)),)
 		-namespace=serializers.dslplatform \
 		-target=java_client \
 		-no-prompt \
-		-compiler \
-		-dependencies:java_client=$(dslplatform_dir)/dependencies \
+		-compiler=java_client/dsl-compiler.exe \
 		-java_client=$(dslplatform_dir)/model.jar \
 		-download
 	$(p1)cp -r $(dslplatform_dir)/tmp/java_client/serializers build/gen/$(2)
