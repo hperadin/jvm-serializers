@@ -1,7 +1,11 @@
 package serializers.dslplatform.media;
 
-public final class Media implements java.io.Serializable, com.dslplatform.client.json.JsonObject {
 
+
+public final class Media   implements java.io.Serializable, com.dslplatform.client.json.JsonObject {
+	
+	
+	
 	public Media(
 			final String uri,
 			final String title,
@@ -14,7 +18,7 @@ public final class Media implements java.io.Serializable, com.dslplatform.client
 			final java.util.List<String> persons,
 			final serializers.dslplatform.media.Player player,
 			final String copyright) {
-
+			
 		setUri(uri);
 		setTitle(title);
 		setWidth(width);
@@ -28,8 +32,10 @@ public final class Media implements java.io.Serializable, com.dslplatform.client
 		setCopyright(copyright);
 	}
 
+	
+	
 	public Media() {
-
+			
 		this.uri = "";
 		this.width = 0;
 		this.height = 0;
@@ -41,14 +47,14 @@ public final class Media implements java.io.Serializable, com.dslplatform.client
 		this.player = serializers.dslplatform.media.Player.JAVA;
 	}
 
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + 74219460;
+		result = prime * result + 730674406;
 		result = prime * result + (this.uri.hashCode());
-        result = prime * result + (this.title != null
-                ? this.title.hashCode() : 0);
+		result = prime * result + (this.title != null ? this.title.hashCode() : 0);
 		result = prime * result + (this.width);
 		result = prime * result + (this.height);
 		result = prime * result + (this.format.hashCode());
@@ -56,203 +62,247 @@ public final class Media implements java.io.Serializable, com.dslplatform.client
 		result = prime * result + ((int) (this.size ^ (this.size >>> 32)));
 		result = prime * result + (this.bitrate);
 		result = prime * result + (this.player.hashCode());
-        result = prime * result + (this.copyright != null
-                ? this.copyright.hashCode() : 0);
+		result = prime * result + (this.copyright != null ? this.copyright.hashCode() : 0);
 		return result;
 	}
 
 	@Override
 	public boolean equals(final Object obj) {
-        if (this == obj) { return true; }
-        if (obj == null) { return false; }
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
 
-        if (!(obj instanceof Media)) { return false; }
+		if (!(obj instanceof Media))
+			return false;
 		final Media other = (Media) obj;
-
-        if (!(this.uri.equals(other.uri))) { return false; }
-        if (!(this.title == other.title || this.title != null && this.title.equals(other.title))) { return false; }
-        if (!(this.width == other.width)) { return false; }
-        if (!(this.height == other.height)) { return false; }
-        if (!(this.format.equals(other.format))) { return false; }
-        if (!(this.duration == other.duration)) { return false; }
-        if (!(this.size == other.size)) { return false; }
-        if (!(this.bitrate == other.bitrate)) { return false; }
-        if (!((this.persons == other.persons || this.persons != null && this.persons.equals(other.persons)))) { return false; }
-        if (!(this.player.equals(other.player))) { return false; }
-        if (!(this.copyright == other.copyright || this.copyright != null && this.copyright.equals(other.copyright))) { return false; }
+		
+		if(!(this.uri.equals(other.uri)))
+			return false;
+		if(!(this.title == other.title || this.title != null && this.title.equals(other.title)))
+			return false;
+		if(!(this.width == other.width))
+			return false;
+		if(!(this.height == other.height))
+			return false;
+		if(!(this.format.equals(other.format)))
+			return false;
+		if(!(this.duration == other.duration))
+			return false;
+		if(!(this.size == other.size))
+			return false;
+		if(!(this.bitrate == other.bitrate))
+			return false;
+		if(!((this.persons == other.persons || this.persons != null && this.persons.equals(other.persons))))
+			return false;
+		if(!(this.player.equals(other.player)))
+			return false;
+		if(!(this.copyright == other.copyright || this.copyright != null && this.copyright.equals(other.copyright)))
+			return false;
 
 		return true;
 	}
 
 	@Override
 	public String toString() {
-        return "Media(" + uri + ',' + title + ',' + width + ',' + height + ',' + format + ',' + duration + ',' + size
-                + ',' + bitrate + ',' + persons + ',' + player + ',' + copyright + ')';
+		return "Media(" + uri + ',' + title + ',' + width + ',' + height + ',' + format + ',' + duration + ',' + size + ',' + bitrate + ',' + persons + ',' + player + ',' + copyright + ')';
 	}
-
+	
 	private static final long serialVersionUID = 0x0097000a;
-
+	
 	private String uri;
 
-    public String getUri() {
-
+	
+	public String getUri()  {
+		
 		return uri;
 	}
 
+	
 	public Media setUri(final String value) {
-
-        if (value == null) { throw new IllegalArgumentException("Property \"uri\" cannot be null!"); }
+		
+		if(value == null) throw new IllegalArgumentException("Property \"uri\" cannot be null!");
 		this.uri = value;
-
+		
 		return this;
 	}
 
+	
 	private String title;
 
-    public String getTitle() {
-
+	
+	public String getTitle()  {
+		
 		return title;
 	}
 
+	
 	public Media setTitle(final String value) {
-
+		
 		this.title = value;
-
+		
 		return this;
 	}
 
+	
 	private int width;
 
-    public int getWidth() {
-
+	
+	public int getWidth()  {
+		
 		return width;
 	}
 
+	
 	public Media setWidth(final int value) {
-
+		
 		this.width = value;
-
+		
 		return this;
 	}
 
+	
 	private int height;
 
-    public int getHeight() {
-
+	
+	public int getHeight()  {
+		
 		return height;
 	}
 
+	
 	public Media setHeight(final int value) {
-
+		
 		this.height = value;
-
+		
 		return this;
 	}
 
+	
 	private String format;
 
-    public String getFormat() {
-
+	
+	public String getFormat()  {
+		
 		return format;
 	}
 
+	
 	public Media setFormat(final String value) {
-
-        if (value == null) { throw new IllegalArgumentException("Property \"format\" cannot be null!"); }
+		
+		if(value == null) throw new IllegalArgumentException("Property \"format\" cannot be null!");
 		this.format = value;
-
+		
 		return this;
 	}
 
+	
 	private long duration;
 
-    public long getDuration() {
-
+	
+	public long getDuration()  {
+		
 		return duration;
 	}
 
+	
 	public Media setDuration(final long value) {
-
+		
 		this.duration = value;
-
+		
 		return this;
 	}
 
+	
 	private long size;
 
-    public long getSize() {
-
+	
+	public long getSize()  {
+		
 		return size;
 	}
 
+	
 	public Media setSize(final long value) {
-
+		
 		this.size = value;
-
+		
 		return this;
 	}
 
+	
 	private int bitrate;
 
-    public int getBitrate() {
-
+	
+	public int getBitrate()  {
+		
 		return bitrate;
 	}
 
+	
 	public Media setBitrate(final int value) {
-
+		
 		this.bitrate = value;
-
+		
 		return this;
 	}
 
+	
 	private java.util.List<String> persons;
 
-    public java.util.List<String> getPersons() {
-
+	
+	public java.util.List<String> getPersons()  {
+		
 		return persons;
 	}
 
+	
 	public Media setPersons(final java.util.List<String> value) {
-
-        if (value == null) { throw new IllegalArgumentException("Property \"persons\" cannot be null!"); }
+		
+		if(value == null) throw new IllegalArgumentException("Property \"persons\" cannot be null!");
 		serializers.dslplatform.Guards.checkNulls(value);
 		this.persons = value;
-
+		
 		return this;
 	}
 
+	
 	private serializers.dslplatform.media.Player player;
 
-    public serializers.dslplatform.media.Player getPlayer() {
-
+	
+	public serializers.dslplatform.media.Player getPlayer()  {
+		
 		return player;
 	}
 
+	
 	public Media setPlayer(final serializers.dslplatform.media.Player value) {
-
-        if (value == null) { throw new IllegalArgumentException("Property \"player\" cannot be null!"); }
+		
+		if(value == null) throw new IllegalArgumentException("Property \"player\" cannot be null!");
 		this.player = value;
-
+		
 		return this;
 	}
 
+	
 	private String copyright;
 
-    public String getCopyright() {
-
+	
+	public String getCopyright()  {
+		
 		return copyright;
 	}
 
+	
 	public Media setCopyright(final String value) {
-
+		
 		this.copyright = value;
-
+		
 		return this;
 	}
 
-	@Override
-    public void serialize(final com.dslplatform.client.json.JsonWriter sw, final boolean minimal) {
+	
+	public void serialize(final com.dslplatform.client.json.JsonWriter sw, final boolean minimal) {
 		sw.writeByte(com.dslplatform.client.json.JsonWriter.OBJECT_START);
 		if (minimal) {
 			__serializeJsonObjectMinimal(sw, false);
@@ -262,182 +312,163 @@ public final class Media implements java.io.Serializable, com.dslplatform.client
 		sw.writeByte(com.dslplatform.client.json.JsonWriter.OBJECT_END);
 	}
 
-	void __serializeJsonObjectMinimal(final com.dslplatform.client.json.JsonWriter sw, boolean hasWrittenProperty) {
-
-        if (!(this.uri.length() == 0)) {
-            if (hasWrittenProperty) {
-                sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
-            }
+	void __serializeJsonObjectMinimal(com.dslplatform.client.json.JsonWriter sw, boolean hasWrittenProperty) {
+		
+		
+			if (!(this.uri.length() == 0)) {
 			hasWrittenProperty = true;
-            sw.writeAscii("\"uri\":", 6);
-            com.dslplatform.client.json.StringConverter.serialize(this.uri, sw);
-        }
-
-        if (this.title != null) {
-            if (hasWrittenProperty) {
-                sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+				sw.writeAscii("\"uri\":", 6);
+				com.dslplatform.client.json.StringConverter.serialize(this.uri, sw);
 			}
+		
+			if (this.title != null) {
+			if(hasWrittenProperty) sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
 			hasWrittenProperty = true;
-            sw.writeAscii("\"title\":null", 8);
-            com.dslplatform.client.json.StringConverter.serialize(this.title, sw);
-        }
-
-        if (this.width != 0) {
-            if (hasWrittenProperty) {
-                sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+				sw.writeAscii("\"title\":", 8);
+				com.dslplatform.client.json.StringConverter.serialize(this.title, sw);
 			}
+		
+			if (this.width != 0) {
+			if(hasWrittenProperty) sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
 			hasWrittenProperty = true;
-            sw.writeAscii("\"width\":0", 8);
-            com.dslplatform.client.json.NumberConverter.serialize(this.width, sw);
-        }
-
-        if (this.height != 0) {
-            if (hasWrittenProperty) {
-                sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+				sw.writeAscii("\"width\":", 8);
+				com.dslplatform.client.json.NumberConverter.serialize(this.width, sw);
 			}
+		
+			if (this.height != 0) {
+			if(hasWrittenProperty) sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
 			hasWrittenProperty = true;
-            sw.writeAscii("\"height\":0", 9);
-            com.dslplatform.client.json.NumberConverter.serialize(this.height, sw);
-        }
-
-        if (!(this.format.length() == 0)) {
-            if (hasWrittenProperty) {
-                sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+				sw.writeAscii("\"height\":", 9);
+				com.dslplatform.client.json.NumberConverter.serialize(this.height, sw);
 			}
+		
+			if (!(this.format.length() == 0)) {
+			if(hasWrittenProperty) sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
 			hasWrittenProperty = true;
-            sw.writeAscii("\"format\":\"\"", 9);
-            com.dslplatform.client.json.StringConverter.serialize(this.format, sw);
-        }
-
-        if (this.duration != 0L) {
-            if (hasWrittenProperty) {
-                sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+				sw.writeAscii("\"format\":", 9);
+				com.dslplatform.client.json.StringConverter.serialize(this.format, sw);
 			}
+		
+			if (this.duration != 0L) {
+			if(hasWrittenProperty) sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
 			hasWrittenProperty = true;
-            sw.writeAscii("\"duration\":0", 11);
-            com.dslplatform.client.json.NumberConverter.serialize(this.duration, sw);
-        }
-
-        if (this.size != 0L) {
-            if (hasWrittenProperty) {
-                sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+				sw.writeAscii("\"duration\":", 11);
+				com.dslplatform.client.json.NumberConverter.serialize(this.duration, sw);
 			}
+		
+			if (this.size != 0L) {
+			if(hasWrittenProperty) sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
 			hasWrittenProperty = true;
-            sw.writeAscii("\"size\":0", 7);
-            com.dslplatform.client.json.NumberConverter.serialize(this.size, sw);
-        }
-
-        if (this.bitrate != 0) {
-            if (hasWrittenProperty) {
-                sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+				sw.writeAscii("\"size\":", 7);
+				com.dslplatform.client.json.NumberConverter.serialize(this.size, sw);
 			}
+		
+			if (this.bitrate != 0) {
+			if(hasWrittenProperty) sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
 			hasWrittenProperty = true;
-            sw.writeAscii("\"bitrate\":0", 10);
-            com.dslplatform.client.json.NumberConverter.serialize(this.bitrate, sw);
-        }
-
-        if (this.persons.size() != 0) {
-            if (hasWrittenProperty) {
-                sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+				sw.writeAscii("\"bitrate\":", 10);
+				com.dslplatform.client.json.NumberConverter.serialize(this.bitrate, sw);
 			}
+		
+		if(this.persons.size() != 0) {
+			if(hasWrittenProperty) sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
 			hasWrittenProperty = true;
-            sw.writeAscii("\"persons\":[]", 11);
+			sw.writeAscii("\"persons\":[", 11);
 			com.dslplatform.client.json.StringConverter.serialize(this.persons.get(0), sw);
-            for (int i = 1; i < this.persons.size(); i++) {
+			for(int i = 1; i < this.persons.size(); i++) {
 				sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
 				com.dslplatform.client.json.StringConverter.serialize(this.persons.get(i), sw);
 			}
 			sw.writeByte(com.dslplatform.client.json.JsonWriter.ARRAY_END);
 		}
-
-        if (this.player != serializers.dslplatform.media.Player.JAVA) {
-            if (hasWrittenProperty) {
-                sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
-            }
+		
+		if(this.player != serializers.dslplatform.media.Player.JAVA) {
+			if(hasWrittenProperty) sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
 			hasWrittenProperty = true;
-            sw.writeAscii("\"player\":\"JAVA\"", 10);
-			sw.writeAscii(this.player.name());
-			sw.writeByte(com.dslplatform.client.json.JsonWriter.QUOTE);
+			sw.writeAscii("\"player\":\"FLASH\"", 16);
 		}
-
-        if (this.copyright != null) {
-            if (hasWrittenProperty) {
-                sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
-            }
+		
+			if (this.copyright != null) {
+			if(hasWrittenProperty) sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
 			hasWrittenProperty = true;
-            sw.writeAscii("\"copyright\":null", 12);
-            com.dslplatform.client.json.StringConverter.serialize(this.copyright, sw);
-        }
+				sw.writeAscii("\"copyright\":", 12);
+				com.dslplatform.client.json.StringConverter.serialize(this.copyright, sw);
+			}
 	}
 
-	void __serializeJsonObjectFull(final com.dslplatform.client.json.JsonWriter sw, final boolean hasWrittenProperty) {
-
-        sw.writeAscii("\"uri\":", 6);
-        com.dslplatform.client.json.StringConverter.serialize(this.uri, sw);
-
-        if (this.title != null) {
-            sw.writeAscii(",\"title\":null", 9);
-            com.dslplatform.client.json.StringConverter.serialize(this.title, sw);
-        } else {
-            sw.writeAscii(",\"title\":null", 13);
-        }
-
-        sw.writeAscii(",\"width\":0", 9);
-        com.dslplatform.client.json.NumberConverter.serialize(this.width, sw);
-
-        sw.writeAscii(",\"height\":0", 10);
-        com.dslplatform.client.json.NumberConverter.serialize(this.height, sw);
-
-        sw.writeAscii(",\"format\":\"\"", 10);
-        com.dslplatform.client.json.StringConverter.serialize(this.format, sw);
-
-        sw.writeAscii(",\"duration\":0", 12);
-        com.dslplatform.client.json.NumberConverter.serialize(this.duration, sw);
-
-        sw.writeAscii(",\"size\":0", 8);
-        com.dslplatform.client.json.NumberConverter.serialize(this.size, sw);
-
-        sw.writeAscii(",\"bitrate\":0", 11);
-        com.dslplatform.client.json.NumberConverter.serialize(this.bitrate, sw);
-
-        if (this.persons.size() != 0) {
-            sw.writeAscii(",\"persons\":[]", 12);
+	void __serializeJsonObjectFull(com.dslplatform.client.json.JsonWriter sw, boolean hasWrittenProperty) {
+		
+		
+			
+			sw.writeAscii("\"uri\":", 6);
+			com.dslplatform.client.json.StringConverter.serialize(this.uri, sw);
+		
+			
+			if (this.title != null) {
+				sw.writeAscii(",\"title\":", 9);
+				com.dslplatform.client.json.StringConverter.serialize(this.title, sw);
+			} else {
+				sw.writeAscii(",\"title\":null", 13);
+			}
+		
+			
+			sw.writeAscii(",\"width\":", 9);
+			com.dslplatform.client.json.NumberConverter.serialize(this.width, sw);
+		
+			
+			sw.writeAscii(",\"height\":", 10);
+			com.dslplatform.client.json.NumberConverter.serialize(this.height, sw);
+		
+			
+			sw.writeAscii(",\"format\":", 10);
+			com.dslplatform.client.json.StringConverter.serialize(this.format, sw);
+		
+			
+			sw.writeAscii(",\"duration\":", 12);
+			com.dslplatform.client.json.NumberConverter.serialize(this.duration, sw);
+		
+			
+			sw.writeAscii(",\"size\":", 8);
+			com.dslplatform.client.json.NumberConverter.serialize(this.size, sw);
+		
+			
+			sw.writeAscii(",\"bitrate\":", 11);
+			com.dslplatform.client.json.NumberConverter.serialize(this.bitrate, sw);
+		
+		if(this.persons.size() != 0) {
+			sw.writeAscii(",\"persons\":[", 12);
 			com.dslplatform.client.json.StringConverter.serialize(this.persons.get(0), sw);
-            for (int i = 1; i < this.persons.size(); i++) {
+			for(int i = 1; i < this.persons.size(); i++) {
 				sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
 				com.dslplatform.client.json.StringConverter.serialize(this.persons.get(i), sw);
 			}
 			sw.writeByte(com.dslplatform.client.json.JsonWriter.ARRAY_END);
-		} else {
-            sw.writeAscii(",\"persons\":[]", 13);
-        }
-
-        sw.writeAscii(",\"player\":\"JAVA\"", 11);
+		}
+		else sw.writeAscii(",\"persons\":[]", 13);
+		
+		
+		sw.writeAscii(",\"player\":\"", 11);
 		sw.writeAscii(this.player.name());
 		sw.writeByte(com.dslplatform.client.json.JsonWriter.QUOTE);
-
-        if (this.copyright != null) {
-            sw.writeAscii(",\"copyright\":null", 13);
-            com.dslplatform.client.json.StringConverter.serialize(this.copyright, sw);
-        } else {
-            sw.writeAscii(",\"copyright\":null", 17);
-        }
+		
+			
+			if (this.copyright != null) {
+				sw.writeAscii(",\"copyright\":", 13);
+				com.dslplatform.client.json.StringConverter.serialize(this.copyright, sw);
+			} else {
+				sw.writeAscii(",\"copyright\":null", 17);
+			}
 	}
 
-    public static com.dslplatform.client.json.JsonReader.ReadJsonObject<Media> JSON_READER =
-            new com.dslplatform.client.json.JsonReader.ReadJsonObject<Media>() {
-                @Override
-                public Media deserialize(
-                        final com.dslplatform.client.json.JsonReader reader,
-                        final com.dslplatform.patterns.ServiceLocator locator) throws java.io.IOException {
-                    return new serializers.dslplatform.media.Media(reader, locator);
-                }
-            };
+	public static com.dslplatform.client.json.JsonReader.ReadJsonObject<Media> JSON_READER = new com.dslplatform.client.json.JsonReader.ReadJsonObject<Media>() {
+		@Override
+		public Media deserialize(final com.dslplatform.client.json.JsonReader reader, final com.dslplatform.patterns.ServiceLocator locator) throws java.io.IOException {
+			return new serializers.dslplatform.media.Media(reader, locator);
+		}
+	};
 
-    private Media(
-            final com.dslplatform.client.json.JsonReader reader,
-            final com.dslplatform.patterns.ServiceLocator _serviceLocator) throws java.io.IOException {
-
+	private Media(final com.dslplatform.client.json.JsonReader reader, final com.dslplatform.patterns.ServiceLocator _serviceLocator) throws java.io.IOException {
+		
 		String _uri_ = "";
 		String _title_ = null;
 		int _width_ = 0;
@@ -446,91 +477,80 @@ public final class Media implements java.io.Serializable, com.dslplatform.client
 		long _duration_ = 0L;
 		long _size_ = 0L;
 		int _bitrate_ = 0;
-		final java.util.List<String> _persons_ = new java.util.ArrayList<String>(4);
+		java.util.List<String> _persons_ = new java.util.ArrayList<String>(4);
 		serializers.dslplatform.media.Player _player_ = serializers.dslplatform.media.Player.JAVA;
 		String _copyright_ = null;
 		byte nextToken = reader.last();
-        if (nextToken != '}') {
+		if(nextToken != '}') {
 			int nameHash = reader.fillName();
 			nextToken = reader.getNextToken();
-            if (nextToken == 'n') {
+			if(nextToken == 'n') {
 				if (reader.wasNull()) {
 					nextToken = reader.getNextToken();
 				} else {
-                    throw new java.io.IOException("Expecting 'u' (as null) at position " + reader.positionInStream()
-                            + ". Found " + (char) nextToken);
+					throw new java.io.IOException("Expecting 'u' (as null) at position " + reader.positionInStream() + ". Found " + (char)nextToken);
 				}
 			} else {
-                switch (nameHash) {
-
+				switch(nameHash) {
+					
 					case 932140029:
 						_uri_ = com.dslplatform.client.json.StringConverter.deserialize(reader);
-                        nextToken = reader.getNextToken();
+					nextToken = reader.getNextToken();
 						break;
 					case -1738164983:
 						_title_ = com.dslplatform.client.json.StringConverter.deserialize(reader);
-                        nextToken = reader.getNextToken();
+					nextToken = reader.getNextToken();
 						break;
 					case -1786286561:
 						_width_ = com.dslplatform.client.json.NumberConverter.deserializeInt(reader);
-                        nextToken = reader.moveToNextToken();
+					nextToken = reader.getNextToken();
 						break;
 					case -708986046:
 						_height_ = com.dslplatform.client.json.NumberConverter.deserializeInt(reader);
-                        nextToken = reader.moveToNextToken();
+					nextToken = reader.getNextToken();
 						break;
 					case -1180859054:
 						_format_ = com.dslplatform.client.json.StringConverter.deserialize(reader);
-                        nextToken = reader.getNextToken();
+					nextToken = reader.getNextToken();
 						break;
 					case 799079693:
 						_duration_ = com.dslplatform.client.json.NumberConverter.deserializeLong(reader);
-                        nextToken = reader.moveToNextToken();
+					nextToken = reader.getNextToken();
 						break;
 					case 597743964:
 						_size_ = com.dslplatform.client.json.NumberConverter.deserializeLong(reader);
-                        nextToken = reader.moveToNextToken();
+					nextToken = reader.getNextToken();
 						break;
 					case 854445426:
 						_bitrate_ = com.dslplatform.client.json.NumberConverter.deserializeInt(reader);
-                        nextToken = reader.moveToNextToken();
+					nextToken = reader.getNextToken();
 						break;
 					case 181318793:
-
-                        if (nextToken == '[') {
-                            nextToken = reader.getNextToken();
-                            if (nextToken != ']') {
-                                com.dslplatform.client.json.StringConverter.deserializeCollection(reader, _persons_);
-                            }
-                            nextToken = reader.getNextToken();
-                        } else {
-                            throw new java.io.IOException("Expecting '[' at position " + reader.positionInStream()
-                                    + ". Found " + (char) nextToken);
+						
+					if (nextToken == '[') {
+						nextToken = reader.getNextToken();
+						if (nextToken != ']') {
+							com.dslplatform.client.json.StringConverter.deserializeCollection(reader, _persons_);
 						}
+						nextToken = reader.getNextToken();
+					}
+					else throw new java.io.IOException("Expecting '[' at position " + reader.positionInStream() + ". Found " + (char)nextToken);
 						break;
 					case 748274432:
-
-                        if (nextToken == '"') {
-                            switch (reader.calcHash()) {
-                                case -247728219:
-                                    _player_ = serializers.dslplatform.media.Player.JAVA;
-                                    break;
-                                case -1831302071:
-                                    _player_ = serializers.dslplatform.media.Player.FLASH;
-                                    break;
-                                default:
-                                    throw new java.io.IOException("Unknown enum value: '" + reader.getLastName()
-                                            + "' at position " + reader.positionInStream());
-                            }
-                            nextToken = reader.getNextToken();
-                        } else {
-                            throw new java.io.IOException("Expecting '\"' at position " + reader.positionInStream()
-                                    + ". Found " + (char) nextToken);
+						
+					if (nextToken == '"') {
+						switch(reader.calcHash()) {
+							case -247728219: _player_ = serializers.dslplatform.media.Player.JAVA; break;
+							case -1831302071: _player_ = serializers.dslplatform.media.Player.FLASH; break;
+							default:
+								throw new java.io.IOException("Unknown enum value: '" + reader.getLastName() + "' at position " + reader.positionInStream());
 						}
+						nextToken = reader.getNextToken();
+					} else throw new java.io.IOException("Expecting '\"' at position " + reader.positionInStream() + ". Found " + (char)nextToken);
 						break;
 					case -1190269634:
 						_copyright_ = com.dslplatform.client.json.StringConverter.deserialize(reader);
-                        nextToken = reader.getNextToken();
+					nextToken = reader.getNextToken();
 						break;
 					default:
 						nextToken = reader.skip();
@@ -541,95 +561,85 @@ public final class Media implements java.io.Serializable, com.dslplatform.client
 				nextToken = reader.getNextToken();
 				nameHash = reader.fillName();
 				nextToken = reader.getNextToken();
-                if (nextToken == 'n') {
+				if(nextToken == 'n') {
 					if (reader.wasNull()) {
 						nextToken = reader.getNextToken();
 						continue;
 					} else {
-                        throw new java.io.IOException("Expecting 'u' (as null) at position "
-                                + reader.positionInStream() + ". Found " + (char) nextToken);
+						throw new java.io.IOException("Expecting 'u' (as null) at position " + reader.positionInStream() + ". Found " + (char)nextToken);
 					}
 				}
-                switch (nameHash) {
-
+				switch(nameHash) {
+					
 					case 932140029:
 						_uri_ = com.dslplatform.client.json.StringConverter.deserialize(reader);
-                        nextToken = reader.getNextToken();
+					nextToken = reader.getNextToken();
 						break;
 					case -1738164983:
 						_title_ = com.dslplatform.client.json.StringConverter.deserialize(reader);
-                        nextToken = reader.getNextToken();
+					nextToken = reader.getNextToken();
 						break;
 					case -1786286561:
 						_width_ = com.dslplatform.client.json.NumberConverter.deserializeInt(reader);
-                        nextToken = reader.moveToNextToken();
+					nextToken = reader.getNextToken();
 						break;
 					case -708986046:
 						_height_ = com.dslplatform.client.json.NumberConverter.deserializeInt(reader);
-                        nextToken = reader.moveToNextToken();
+					nextToken = reader.getNextToken();
 						break;
 					case -1180859054:
 						_format_ = com.dslplatform.client.json.StringConverter.deserialize(reader);
-                        nextToken = reader.getNextToken();
+					nextToken = reader.getNextToken();
 						break;
 					case 799079693:
 						_duration_ = com.dslplatform.client.json.NumberConverter.deserializeLong(reader);
-                        nextToken = reader.moveToNextToken();
+					nextToken = reader.getNextToken();
 						break;
 					case 597743964:
 						_size_ = com.dslplatform.client.json.NumberConverter.deserializeLong(reader);
-                        nextToken = reader.moveToNextToken();
+					nextToken = reader.getNextToken();
 						break;
 					case 854445426:
 						_bitrate_ = com.dslplatform.client.json.NumberConverter.deserializeInt(reader);
-                        nextToken = reader.moveToNextToken();
+					nextToken = reader.getNextToken();
 						break;
 					case 181318793:
-
-                        if (nextToken == '[') {
-                            nextToken = reader.getNextToken();
-                            if (nextToken != ']') {
-                                com.dslplatform.client.json.StringConverter.deserializeCollection(reader, _persons_);
-                            }
-                            nextToken = reader.getNextToken();
-                        } else {
-                            throw new java.io.IOException("Expecting '[' at position " + reader.positionInStream()
-                                    + ". Found " + (char) nextToken);
+						
+					if (nextToken == '[') {
+						nextToken = reader.getNextToken();
+						if (nextToken != ']') {
+							com.dslplatform.client.json.StringConverter.deserializeCollection(reader, _persons_);
 						}
+						nextToken = reader.getNextToken();
+					}
+					else throw new java.io.IOException("Expecting '[' at position " + reader.positionInStream() + ". Found " + (char)nextToken);
 						break;
 					case 748274432:
-
-                        if (nextToken == '"') {
-                            switch (reader.calcHash()) {
-                                case -247728219:
-                                    _player_ = serializers.dslplatform.media.Player.JAVA;
-                                    break;
-                                case -1831302071:
-                                    _player_ = serializers.dslplatform.media.Player.FLASH;
-                                    break;
-                                default:
-                                    throw new java.io.IOException("Unknown enum value: '" + reader.getLastName()
-                                            + "' at position " + reader.positionInStream());
-                            }
-                            nextToken = reader.getNextToken();
-                        } else {
-                            throw new java.io.IOException("Expecting '\"' at position " + reader.positionInStream()
-                                    + ". Found " + (char) nextToken);
+						
+					if (nextToken == '"') {
+						switch(reader.calcHash()) {
+							case -247728219: _player_ = serializers.dslplatform.media.Player.JAVA; break;
+							case -1831302071: _player_ = serializers.dslplatform.media.Player.FLASH; break;
+							default:
+								throw new java.io.IOException("Unknown enum value: '" + reader.getLastName() + "' at position " + reader.positionInStream());
 						}
+						nextToken = reader.getNextToken();
+					} else throw new java.io.IOException("Expecting '\"' at position " + reader.positionInStream() + ". Found " + (char)nextToken);
 						break;
 					case -1190269634:
 						_copyright_ = com.dslplatform.client.json.StringConverter.deserialize(reader);
-                        nextToken = reader.getNextToken();
+					nextToken = reader.getNextToken();
 						break;
 					default:
 						nextToken = reader.skip();
 						break;
 				}
 			}
-            if (nextToken != '}') { throw new java.io.IOException("Expecting '}' at position "
-                    + reader.positionInStream() + ". Found " + (char) nextToken); }
+			if (nextToken != '}') {
+				throw new java.io.IOException("Expecting '}' at position " + reader.positionInStream() + ". Found " + (char)nextToken);
+			}
 		}
-
+		
 		this.uri = _uri_;
 		this.title = _title_;
 		this.width = _width_;
@@ -643,12 +653,11 @@ public final class Media implements java.io.Serializable, com.dslplatform.client
 		this.copyright = _copyright_;
 	}
 
-    public static Object deserialize(
-            final com.dslplatform.client.json.JsonReader reader,
-            final com.dslplatform.patterns.ServiceLocator locator) throws java.io.IOException {
+	public static Object deserialize(final com.dslplatform.client.json.JsonReader reader, final com.dslplatform.patterns.ServiceLocator locator) throws java.io.IOException {
 		switch (reader.getNextToken()) {
 			case 'n':
-                if (reader.wasNull()) { return null; }
+				if (reader.wasNull())
+					return null;
 				throw new java.io.IOException("Invalid null value found at: " + reader.positionInStream());
 			case '{':
 				reader.getNextToken();
@@ -656,8 +665,7 @@ public final class Media implements java.io.Serializable, com.dslplatform.client
 			case '[':
 				return reader.deserializeNullableCollection(JSON_READER);
 			default:
-                throw new java.io.IOException("Invalid char value found at: " + reader.positionInStream()
-                        + ". Expecting null, { or [. Found: " + (char) reader.last());
+				throw new java.io.IOException("Invalid char value found at: " + reader.positionInStream() + ". Expecting null, { or [. Found: " + (char)reader.last());
 		}
 	}
 }
